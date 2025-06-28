@@ -1,5 +1,4 @@
 import {Song} from '../models/song.model.js';
-import axios from "axios";
 
 export const getAllSongs = async (req, res, next) => {
     try {
