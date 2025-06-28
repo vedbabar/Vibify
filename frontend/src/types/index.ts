@@ -33,6 +33,7 @@ export interface Message {
 	content: string;
 	createdAt: string;
 	updatedAt: string;
+	replyTo?: Message;
 }
 
 export interface User {
