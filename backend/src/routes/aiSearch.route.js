@@ -1,5 +1,4 @@
 import express from "express";
-import axios from "axios";
 import genAI from "../lib/gemini.js";
 
 const router = express.Router();
