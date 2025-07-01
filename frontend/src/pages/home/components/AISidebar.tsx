@@ -93,7 +93,7 @@ const AISidebar = ({
 	
 		  {/* Header */}
 		  <div className="relative overflow-hidden">
-			<div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-90"></div>
+			<div className="absolute inset-0 bg-gradient-to-r bg-zinc-800 via-bg-zinc-800 to-bg-zinc-800 opacity-90"></div>
 			<div className="relative p-5">
 			  <div className="flex items-center justify-between">
 				<div className="flex items-center gap-4">

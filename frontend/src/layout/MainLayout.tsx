@@ -31,7 +31,7 @@ const MainLayout = () => {
 					exit={{ opacity: 0, scale: 0.9 }}
 					transition={{ duration: 0.2 }}
 					onClick={openAISidebar}
-					className='fixed top-13 right-4 z-[1100] flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm text-xs'
+					className='cursor-pointer fixed top-13 right-4 z-[1100] flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm text-xs'
 				>
 					<Sparkles className='w-3.5 h-3.5 animate-pulse' />
 					<span className='font-medium'>Find Songs with AI</span>
