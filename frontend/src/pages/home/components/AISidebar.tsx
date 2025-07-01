@@ -48,11 +48,12 @@ const AISidebar = ({
 	};
   
 	return (
-	  <div
-		className={`fixed top-0 right-0 w-96 h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white shadow-2xl z-50 transform transition-all duration-500 ease-out ${
+		<div
+		className={`fixed top-0 right-0 w-96 h-full bg-zinc-800 text-white shadow-2xl z-50 transform transition-all duration-500 ease-out ${
 		  isOpen ? "translate-x-0" : "translate-x-full"
 		}`}
 	  >
+	  
 		{/* Custom styles */}
 		<style dangerouslySetInnerHTML={{
 		  __html: `
@@ -100,7 +101,7 @@ const AISidebar = ({
   
 		{/* Header */}
 		<div className="relative overflow-hidden">
-			<div className="absolute inset-0 bg-gradient-to-r bg-zinc-800 via-bg-zinc-800 to-bg-zinc-800 opacity-90"></div>
+			<div className="absolute inset-0 bg-gradient-to-r bg-zinc-900 via-bg-zinc-900 to-bg-zinc-800 opacity-90"></div>
 			<div className="relative p-5">
 			  <div className="flex items-center justify-between">
 				<div className="flex items-center gap-4">
@@ -120,9 +121,9 @@ const AISidebar = ({
 				</div>
 				<button 
 				  onClick={onClose} 
-				  className="w-8 h-8 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-md flex items-center justify-center transition-all duration-200 hover:scale-110 hover:rotate-90 group"
+				  className="w-6 h-6 bg-gray-800 bg-opacity-20 hover:bg-opacity-30 rounded-md flex items-center justify-center transition-all duration-200 hover:scale-110 hover:rotate-90 group"
 				>
-				  <X className="cursor-pointer w-8 h-8 bg-gray-800 text-white rounded-md" />
+				  <X className="cursor-pointer w-6 h-6 bg-gray-800 text-white rounded-md" />
 				</button>
 			  </div>
 			</div>
@@ -217,7 +218,7 @@ const AISidebar = ({
 							  onClick={handlePlay}
 							  className="w-16 h-16 bg-white text-slate-900 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors duration-200 shadow-2xl hover:shadow-white/25"
 							>
-							  <Play className="w-7 h-7 ml-1" fill="currentColor" />
+							  <Play className="cursor-pointer w-7 h-7 ml-1" fill="currentColor" />
 							</button>
 						  </div>
 						</div>
@@ -254,10 +255,12 @@ const AISidebar = ({
 			{!video && !loading && (
 			  <div className="flex flex-col items-center justify-center py-20 px-6">
 				<div className="relative mb-8">
-				  <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl">
-					<Music className="w-12 h-12 text-white" />
-				  </div>
-				  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-pink-400 to-red-400 rounded-full flex items-center justify-center">
+				  <img
+						src="https://cdn-icons-png.flaticon.com/512/9973/9973495.png" 
+						alt="AI"
+						className="w-24 h-24 object-cover"
+					/>
+				  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
 					<Sparkles className="w-4 h-4 text-white" />
 				  </div>
 				</div>
