@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { axiosInstance } from "@/lib/axios";
-import { Search, X, Play, Sparkles, Music, ExternalLink, Heart } from "lucide-react";
+import { Search, X, Play, Sparkles, Music } from "lucide-react";
 
 interface Video {
 	videoId: string;
@@ -65,11 +65,11 @@ const AISidebar = ({
 			  border-radius: 3px;
 			}
 			.scrollbar-custom::-webkit-scrollbar-thumb {
-			  background: linear-gradient(45deg, #6366f1, #8b5cf6);
-			  border-radius: 3px;
+			background: #6b7280; /* gray-500 */
+			border-radius: 4px;
 			}
 			.scrollbar-custom::-webkit-scrollbar-thumb:hover {
-			  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+			background: #4b5563; /* gray-600 */
 			}
 			.glass-morphism {
 			  backdrop-filter: blur(16px);
