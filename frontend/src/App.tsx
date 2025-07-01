@@ -8,29 +8,33 @@ import AlbumPage from "./pages/album/AlbumPage";
 import AdminPage from "./pages/home/admin/AdminPage";
 import { Toaster } from "react-hot-toast";
 import NotFoundPage from "./pages/404/NotFoundPage";
-
-
+import AISidebar from "./pages/home/components/AISidebar"
+import { useAISidebarStore } from "./stores/useAISidebarStore"; // ✅ store
 
 function App() {
+  const isSidebarOpen = useAISidebarStore((state) => state.isOpen);
+  const closeSidebar = useAISidebarStore((state) => state.close);
+
   return (
     <>
-    <Routes>
-      <Route
-        path='/sso-callback'
-        element={<AuthenticateWithRedirectCallback signUpForceRedirectUrl={"/auth-callback"} />}
-      />
-      <Route path='/auth-callback' element={<AuthCallbackPage />} />
-      <Route path='/admin' element={<AdminPage />} />
+      <AISidebar isOpen={isSidebarOpen} onClose={closeSidebar} /> {/* ✅ globally rendered */}
+      <Routes>
+        <Route
+          path='/sso-callback'
+          element={<AuthenticateWithRedirectCallback signUpForceRedirectUrl={"/auth-callback"} />}
+        />
+        <Route path='/auth-callback' element={<AuthCallbackPage />} />
+        <Route path='/admin' element={<AdminPage />} />
 
-      <Route element={<MainLayout />}>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/chat' element={<ChatPage />} />
-        <Route path='/albums/:albumId' element={<AlbumPage />} />
-        <Route path='*' element={<NotFoundPage />} />
-      </Route>
-    </Routes>
-    <Toaster />
-  </>
+        <Route element={<MainLayout />}>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/chat' element={<ChatPage />} />
+          <Route path='/albums/:albumId' element={<AlbumPage />} />
+          <Route path='*' element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+      <Toaster />
+    </>
   );
 }
 

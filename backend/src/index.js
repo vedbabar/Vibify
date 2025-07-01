@@ -18,6 +18,7 @@ import albumRoutes from './routes/album.route.js';
 import statRoutes from './routes/stat.route.js';
 import { createServer } from 'http';
 import { initializeSocket } from './lib/socket.js';
+import aiSearchRouter from "./routes/aiSearch.route.js";
 
 
 dotenv.config();
@@ -66,6 +67,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/songs", songRoutes);
 app.use("/api/albums", albumRoutes);
 app.use("/api/stats", statRoutes);
+app.use("/api", aiSearchRouter);
 
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,"../frontend/dist")))
